@@ -1,0 +1,77 @@
+﻿Build started 8.7.2016 12:12:02.
+     1>Project "D:\Sola\Diplomska\Marching cubes implementations\MarchingCubesCPP\MarchingCubesCPP\MarchingCubesCPP.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Release\MarchingCubesCPP.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Ox /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt Main.cpp
+         Main.cpp
+     1>Main.cpp(241): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+     1>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\type_traits(1349): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\type_traits(1417): note: see reference to function template instantiation 'void std::_Invoker_functor::_Call<void(__cdecl *)(std::vector<vec3<float>,std::allocator<_Ty>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<_Ty,std::allocator<_Ty>>,float,vec3<int>,int,_Ty,double,int>(_Callable &&,std::vector<_Ty,std::allocator<_Ty>> &&,float &&,vec3<int> &&,int &&,_Ty &&,double &&,int &&)' being compiled
+                 with
+                 [
+                     _Ty=vec3<float>,
+                     _Callable=void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int)
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\thr/xthread(238): note: see reference to function template instantiation 'void std::invoke<void(__cdecl *)(std::vector<vec3<float>,std::allocator<_Ty>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<_Ty,std::allocator<_Ty>>*,float*,vec3<int>,int,vec3<float>,double,int>(_Callable &&,std::vector<_Ty,std::allocator<_Ty>> *&&,float *&&,vec3<int> &&,int &&,vec3<float> &&,double &&,int &&)' being compiled
+                 with
+                 [
+                     _Ty=vec3<float>,
+                     _Callable=void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int)
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\thr/xthread(247): note: see reference to function template instantiation 'void std::_LaunchPad<_Target>::_Execute<0,1,2,3,4,5,6,7>(std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<_Ty>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<_Ty,std::allocator<_Ty>> *,float *,vec3<int>,int,vec3<float>,double,int> &,std::integer_sequence<unsigned __int64,0,1,2,3,4,5,6,7>)' being compiled
+                 with
+                 [
+                     _Target=std::unique_ptr<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>,std::default_delete<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>>>,
+                     _Ty=vec3<float>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\thr/xthread(245): note: see reference to function template instantiation 'void std::_LaunchPad<_Target>::_Execute<0,1,2,3,4,5,6,7>(std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<_Ty>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<_Ty,std::allocator<_Ty>> *,float *,vec3<int>,int,vec3<float>,double,int> &,std::integer_sequence<unsigned __int64,0,1,2,3,4,5,6,7>)' being compiled
+                 with
+                 [
+                     _Target=std::unique_ptr<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>,std::default_delete<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>>>,
+                     _Ty=vec3<float>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\thr/xthread(242): note: while compiling class template member function 'void std::_LaunchPad<_Target>::_Run(std::_LaunchPad<_Target> *) noexcept'
+                 with
+                 [
+                     _Target=std::unique_ptr<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>,std::default_delete<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>>>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\thr/xthread(230): note: see reference to function template instantiation 'void std::_LaunchPad<_Target>::_Run(std::_LaunchPad<_Target> *) noexcept' being compiled
+                 with
+                 [
+                     _Target=std::unique_ptr<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>,std::default_delete<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>>>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\thr/xthread(256): note: see reference to class template instantiation 'std::_LaunchPad<_Target>' being compiled
+                 with
+                 [
+                     _Target=std::unique_ptr<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>,std::default_delete<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>>>
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\thread(52): note: see reference to function template instantiation 'void std::_Launch<std::unique_ptr<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<_Ty>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<_Ty,std::allocator<_Ty>> *,float *,vec3<int>,int,vec3<float>,double,int>,std::default_delete<std::tuple<void (__cdecl *)(std::vector<_Ty,std::allocator<_Ty>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<_Ty,std::allocator<_Ty>> *,float *,vec3<int>,int,vec3<float>,double,int>>>>(_Thrd_t *,_Target &&)' being compiled
+                 with
+                 [
+                     _Ty=vec3<float>,
+                     _Target=std::unique_ptr<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>,std::default_delete<std::tuple<void (__cdecl *)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<vec3<float>,std::allocator<vec3<float>>> *,float *,vec3<int>,int,vec3<float>,double,int>>>
+                 ]
+         Main.cpp(229): note: see reference to function template instantiation 'std::thread::thread<void(__cdecl &)(std::vector<vec3<float>,std::allocator<_Ty>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<_Ty,std::allocator<_Ty>>*,float*,vec3<int>,T&,vec3<float>,double,int&,void>(_Fn,std::vector<_Ty,std::allocator<_Ty>> *&&,float *&&,vec3<T> &&,T &,vec3<float> &&,double &&,int &)' being compiled
+                 with
+                 [
+                     _Ty=vec3<float>,
+                     T=int,
+                     _Fn=void (__cdecl &)(std::vector<vec3<float>,std::allocator<vec3<float>>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int)
+                 ]
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Sola\Diplomska\Marching cubes implementations\MarchingCubesCPP\x64\Release\MarchingCubesCPP.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Sola\Diplomska\Marching cubes implementations\MarchingCubesCPP\x64\Release\MarchingCubesCPP.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Sola\Diplomska\Marching cubes implementations\MarchingCubesCPP\x64\Release\MarchingCubesCPP.lib" /MACHINE:X64 x64\Release\Main.obj
+         Generating code
+         3 of 447 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
+         Finished generating code
+         MarchingCubesCPP.vcxproj -> D:\Sola\Diplomska\Marching cubes implementations\MarchingCubesCPP\x64\Release\MarchingCubesCPP.exe
+       FinalizeBuildStatus:
+         Deleting file "x64\Release\MarchingCubesCPP.tlog\unsuccessfulbuild".
+         Touching "x64\Release\MarchingCubesCPP.tlog\MarchingCubesCPP.lastbuildstate".
+     1>Done Building Project "D:\Sola\Diplomska\Marching cubes implementations\MarchingCubesCPP\MarchingCubesCPP\MarchingCubesCPP.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.02
