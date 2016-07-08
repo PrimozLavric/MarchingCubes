@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marching Cubes Performance Test</title>
+</head>
+<body>
+    <script src="MarchingCubesDataGenerator.js"></script>
+    <script src="MarchingCubes.js"></script>
+
+    <h1 align="center">SEE THE CONSOLE FOR THE RESULTS</h1>
+    <p align="center" style="font-size: 20px">This is performance test of Marching cubes parallel implementation with WebWorkers.</p>
+
+    <form style="margin-left: 20px;">
+        <h3 style="margin-bottom: 10px">Test input:</h3>
+        Volume size: (<input type="number" id="sizeX" required style="width: 50px" min="64" max="1024">, <input type="number" id="sizeY" required style="width: 50px" min="64" max="1024">, <input type="number" id="sizeZ" required style="width: 50px" min="64" max="1024">)
+        <br><br>
+        Num. workers range: Min: <input type="number" id="numWorkersMin" style="margin-right:10px; width: 40px" min="1" max="16"> Max: <input type="number" id="numWorkersMax" style="width: 40px" min="1" max="16">
+        <br><br>
+        Num. iterations: <input type="number" id="numIterations" style="margin-right:10px; width: 40px" min="1" max="100">
+        <br><br>
+        <button type="button" onclick="startTest()"><b style="font-size: 16px">Start test</b></button>
+    </form>
+
+
+    <h3 style="margin-left: 20px;">Console output: </h3>
+    <div id="debugDiv" style="padding-left: 5px; margin: 0 20px 0 20px; background-color: lightgray; overflow-y: scroll; height: 500px"></div>
+</body>
+
+<script>
+    if (typeof console  != "undefined")
+        if (typeof console.log != 'undefined')
+            console.olog = console.log;
+        else
+            console.olog = function() {};
+
+    console.log = function(message) {
+        console.olog(message);
+        var div = document.getElementById("debugDiv");
+        div.innerHTML = div.innerHTML + '<p>' + message + '</p>';
+    };
+    console.error = console.debug = console.info =  console.log;
+
+    var planeEq = "x * x + y * y - z * z - 25";     // Can use x, y, z unknowns
+    var size = {x: 256, y: 256, z: 256};
+    var iterations;
+    var nThreadsMin;
+    var nThreadsMax;
+
+    function startTest() {
+        var sizeX = document.getElementById('sizeX').value;
+        var sizeY = document.getElementById('sizeX').value;
+        var sizeZ = document.getElementById('sizeX').value;
+
+        nThreadsMin = document.getElementById('numWorkersMin').value;
+        nThreadsMax = document.getElementById('numWorkersMax').value;
+
+        iterations = document.getElementById('numIterations').value;
+
+        // Input verification
+        if (sizeX === "" || sizeY === "" || sizeZ === "" || nThreadsMin === "" || nThreadsMax === "" || iterations === "") {
+            return;
+        }
+
+        size.x = parseInt(sizeX);
+        size.y = parseInt(sizeY);
+        size.z = parseInt(sizeZ);
+
+        nThreadsMin = parseInt(nThreadsMin);
+        nThreadsMax = parseInt(nThreadsMax);
+
+        iterations = parseInt(iterations);
+
+        // Input verification
+        if (size.x > 1024 || size.x < 64 || size.y > 1024 || size.y < 64 || size.z > 1024 || size.z < 64 || size.x > 1024 || nThreadsMin < 1 || nThreadsMin > 16 || nThreadsMax < 1 || nThreadsMax > 16 || iterations < 1 || iterations > 100) {
+            return;
+        }
+
+        console.log("Generating float scalar field of size (" + size.x + ", " + size.y + ", " + size.z + ") with equation: val = " + planeEq);
+
+        let worker = new Worker("./MarchingCubesDataGenerator.js");
+
+        worker.onmessage = function(result) {
+            var values = new Float32Array(result.data);
+            console.log("Finished scalar field generation. Starting performance test (Iterations per num. of workers: " + iterations + ").\n\n")
+
+            marchingCubesTest(values);
+        };
+
+        worker.postMessage({size: size, planeEq: planeEq});
+    }
+
+    function marchingCubesTest(values) {
+        var iterCounter = 0;
+        var threadCounter = nThreadsMin;
+        var times = [];
+        var timeSum = 0;
+
+        var onLoad = function(vertices, time) {
+            vertices = null;
+
+            times.push(time);
+            timeSum += time;
+
+            iterCounter ++;
+
+            // Batch of iterations finished. Output result
+            if (iterCounter >= iterations) {
+                var timeAvg = timeSum / iterations;
+                var sd = 0;
+
+                for (var i = 0; i < times.length; i++) {
+                    sd += Math.pow(times[i] - timeAvg, 2);
+                }
+
+                sd = Math.sqrt(sd / iterations);
+
+                console.log("Test finished with " + threadCounter.toFixed(4) + " Web Workers.");
+                console.log("Average time: " + timeAvg.toFixed(4) + "s");
+                console.log("Standard deviation: " + sd.toFixed(4) + "s");
+                console.log("------------------------------------------------------------------------------");
+
+                // Reset test data;
+                times = [];
+                timeSum = 0;
+                threadCounter++;
+                iterCounter = 0;
+            }
+        };
+
+        var MC = new MarchingCubes();
+
+        for (var i = nThreadsMin; i <= nThreadsMax; i++) {
+            for (var j = 0; j < iterations; j++) {
+                MC.extractMesh({dimensions: size, voxelDimensions: {x: 1.0, y: 1.0, z: 1.0}, isoLevel: 0.5}, values, i, onLoad);
+            }
+        }
+    }
+</script>
+</html>
