@@ -13,7 +13,7 @@ var offset;
 
 var values;
 
-// TODO: Implement support for other value types
+var jsBridge = null;
 
 onmessage = function(msg) {
     // First message should specify the meta data
@@ -29,36 +29,14 @@ onmessage = function(msg) {
         return;
     }
     else if (msgCount === 1) {
-        values = new Uint8Array(msg.data);
+        values = new Float32Array(msg.data);
     }
 
-    // VALUES MEMORY ALLOCATION
-    // Get positions byte size and alloc space on the heap
-    var nValBytes = values.length * values.BYTES_PER_ELEMENT;
-    var valPtr = Module._malloc(nValBytes);
-
-    // Copy values data to the heap
-    var valHeapAlloc = new Uint8Array(Module.HEAPU8.buffer, valPtr, nValBytes);
-    valHeapAlloc.set(values);
+    if(!jsBridge)
+        jsBridge = new JsBridge();
 
 
-    // Returns pointer to result
-    var rezPoint = Module.ccall('marchingCubes',
-        'number', ['number', 'number', 'number', 'number', 'number', 'number', 'number', 'number', 'number', 'number'],
-        [dimensions.x, dimensions.y, dimensions.z, dimensions.zFull, voxelDim.x, voxelDim.y, voxelDim.z, isoLevel, offset, valHeapAlloc.byteOffset]);
-
-    Module._free(valPtr);
-
-    // Parse results
-    var rezSize = getValue(rezPoint, 'float');
-
-    console.log(rezSize);
-    var vertices = new Float32Array(rezSize-1);
-    for (var i = 0; i < rezSize; i++) {
-        vertices[i] = getValue(rezPoint + (4 * (i+1)), 'float')
-    }
-
-    console.log(vertices.length);
-
+    var vertices = jsBridge.marchingCubes(dimensions.x, dimensions.y, dimensions.z, dimensions.zFull, voxelDim.x, voxelDim.y, voxelDim.z, isoLevel, offset, values);
+    
     postMessage(vertices.buffer, [vertices.buffer]);
 };

@@ -516,6 +516,7 @@ onmessage = function(msg) {
 
     values = null;
 
+    console.log(idx);
     // Return last vertice buffer
     postMessage(vertices.buffer, [vertices.buffer]);
     // Return last vertice buffer size

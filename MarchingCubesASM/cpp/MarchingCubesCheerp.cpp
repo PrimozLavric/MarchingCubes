@@ -1,10 +1,23 @@
-#include <emscripten.h>
+#include <cheerp/client.h>
+#include <cheerp/clientlib.h>
 #include <vector>
 
+using namespace client;
 using namespace std;
 
-extern "C" {
-    int marchingCubes(int sizeX, int sizeY, int sizeZ, int sizeZfull, float voxX, float voxY, float voxZ, float isolevel, int offset, float *values) {
+// The class can of course have any name
+// The [[jsexport]] attribute tells Cheerp to make
+// the class available to JavaScript code
+class [[cheerp::jsexport]] JsBridge
+{
+public:
+    JsBridge()
+    {
+    }
+
+
+    Float32Array* marchingCubes(int sizeX, int sizeY, int sizeZ, int sizeZfull, float voxX, float voxY, float voxZ, float isolevel, int offset, float *values) {
+
 
         int MC_EDGE_TABLE[256] = {
             0x0  , 0x109, 0x203, 0x30a, 0x406, 0x50f, 0x605, 0x70c,
@@ -304,8 +317,6 @@ extern "C" {
         float position[3];
 
         vector<float> vertices;
-        // Reserve space for size
-        vertices.push_back(0);
 
         float maxX = voxX * (sizeX - 1);
         float maxY = voxY * (sizeY - 1);
@@ -346,7 +357,7 @@ extern "C" {
                     position[2] = (z + offset) * voxZ;
 
                     // Voxel intensities
-                    int value0 = values[p],
+                    float value0 = values[p],
                         value1 = values[px],
                         value2 = values[py],
                         value3 = values[pxy],
@@ -464,12 +475,12 @@ extern "C" {
                         int index3 = MC_TRI_TABLE[cubeindex + i + 2];
 
                         // Add triangles
-                        vertices.push_back(vlist[index2][0] / maxAxisVal - 0.5f);  // x
-                        vertices.push_back(vlist[index2][1] / maxAxisVal - 0.5f);  // y
-                        vertices.push_back(vlist[index2][2] / maxAxisVal - 0.5f);  // z
                         vertices.push_back(vlist[index3][0] / maxAxisVal - 0.5f);  // x
                         vertices.push_back(vlist[index3][1] / maxAxisVal - 0.5f);  // y
                         vertices.push_back(vlist[index3][2] / maxAxisVal - 0.5f);  // z
+                        vertices.push_back(vlist[index2][0] / maxAxisVal - 0.5f);  // x
+                        vertices.push_back(vlist[index2][1] / maxAxisVal - 0.5f);  // y
+                        vertices.push_back(vlist[index2][2] / maxAxisVal - 0.5f);  // z
                         vertices.push_back(vlist[index1][0] / maxAxisVal - 0.5f);  // x
                         vertices.push_back(vlist[index1][1] / maxAxisVal - 0.5f);  // y
                         vertices.push_back(vlist[index1][2] / maxAxisVal - 0.5f);  // z
@@ -480,7 +491,11 @@ extern "C" {
             }
         }
 
-        vertices[0] = vertices.size();
-        return (int) &vertices[0];
+        return cheerp::MakeTypedArray((float *) &vertices[0], vertices.size() * sizeof(float));
     }
+};
+
+// An entry point, even if empty, is still required
+void webMain()
+{
 }
