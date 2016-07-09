@@ -1,11 +1,11 @@
-﻿Build started 8.7.2016 12:12:02.
+﻿Build started 9.7.2016 2:23:35.
      1>Project "D:\Sola\Diplomska\Marching cubes implementations\MarchingCubesCPP\MarchingCubesCPP\MarchingCubesCPP.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "x64\Release\MarchingCubesCPP.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Ox /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt Main.cpp
          Main.cpp
-     1>Main.cpp(241): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+     1>Main.cpp(242): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
      1>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\type_traits(1349): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\type_traits(1417): note: see reference to function template instantiation 'void std::_Invoker_functor::_Call<void(__cdecl *)(std::vector<vec3<float>,std::allocator<_Ty>> *,const float *,const vec3<int> &,int,const vec3<float> &,float,int),std::vector<_Ty,std::allocator<_Ty>>,float,vec3<int>,int,_Ty,double,int>(_Callable &&,std::vector<_Ty,std::allocator<_Ty>> &&,float &&,vec3<int> &&,int &&,_Ty &&,double &&,int &&)' being compiled
                  with
@@ -74,4 +74,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.02
+Time Elapsed 00:00:00.59

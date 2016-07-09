@@ -227,7 +227,7 @@ int main(int argc, char* argv[]) {
 
 				// Execute
 				threads.push_back(thread(marchingCubes, &results[i], &scalarField[offset], vec3<int>{ size.x, size.y, paddedSegmentSize }, size.z, vec3<float>{ 1, 1, 1 }, 0.5, zAxisOffset));
-
+				
 				// Correct offsets for next iteration
 				zAxisOffset += segmentSize;
 				offset += segmentSize * size.x * size.y;
