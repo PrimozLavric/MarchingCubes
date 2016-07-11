@@ -161,7 +161,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        final int[] size = new int[]{512, 512, 512};
+        final int[] size = new int[]{256, 256, 256};
 
         final float[] scalarField = new float[size[0] * size[1] * size[2]];
         float axisMin = -10;
