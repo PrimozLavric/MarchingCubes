@@ -13,18 +13,44 @@
 
     <form style="margin-left: 20px;">
         <h3 style="margin-bottom: 10px">Test input:</h3>
-        Volume size: (<input type="number" id="sizeX" required style="width: 50px" min="64" max="1024">, <input type="number" id="sizeY" required style="width: 50px" min="64" max="1024">, <input type="number" id="sizeZ" required style="width: 50px" min="64" max="1024">)
+        <div>
+            <b>Custom input volume (optional):</b>
+            <br>
+            <br>
+            Select volume file:  <input type="file" id="volFile">
+            <br>
+            <br>
+            Values data type:
+            <select id="valueType">
+                <option value="Int8Array">Char</option>
+                <option value="Uint8Array">Unsigned char</option>
+                <option value="Int16Array">Short</option>
+                <option value="Uint16Array">Unsigned short</option>
+                <option value="Int32Array">Integer</option>
+                <option value="Uint32Array">Unsigned integer</option>
+                <option value="Float32Array">Float</option>
+                <option value="Float64Array">Double</option>
+            </select>
+            <br>
+            ---------------------------------------------------------------------------------------------
+        </div>
+        <br>
+        Volume dimensions: (<input type="number" id="sizeX" required style="width: 50px" min="64" max="1024" value="128">, <input type="number" id="sizeY" required style="width: 50px" min="64" max="1024" value="128">, <input type="number" id="sizeZ" required style="width: 50px" min="64" max="1024" value="128">)
         <br><br>
-        Num. workers range: Min: <input type="number" id="numWorkersMin" style="margin-right:10px; width: 40px" min="1" max="16"> Max: <input type="number" id="numWorkersMax" style="width: 40px" min="1" max="16">
+        Voxel dimensions: (<input type="number" id="voxDimX" required style="width: 35px" value="1" step="0.1">, <input type="number" id="voxDimY" required style="width: 35px" value="1" step="0.1">, <input type="number" id="voxDimZ" required style="width: 35px" value="1" step="0.1">)
         <br><br>
-        Num. iterations: <input type="number" id="numIterations" style="margin-right:10px; width: 40px" min="1" max="100">
+        Iso value: <input type="number" id="isoValue" required value="0.5" step="0.1">
+        <br><br>
+        Num. workers range: Min: <input type="number" id="numWorkersMin" style="margin-right:10px; width: 40px" min="1" max="16" value="1"> Max: <input type="number" id="numWorkersMax" style="width: 40px" min="1" max="16" value="4">
+        <br><br>
+        Num. iterations: <input type="number" id="numIterations" style="margin-right:10px; width: 40px" min="1" max="100" value="10">
         <br><br>
         <button type="button" onclick="startTest()"><b style="font-size: 16px">Start test</b></button>
     </form>
 
-
-    <h3 style="margin-left: 20px;">Console output: </h3>
-    <div id="debugDiv" style="padding-left: 5px; margin: 0 20px 0 20px; background-color: lightgray; overflow-y: scroll; height: 500px"></div>
+    <h3 style="margin-left: 20px; float: left;">Console output: </h3>
+    <button style="float: right; margin-top: 20px; margin-right: 20px;" onclick="document.getElementById('debugDiv').innerHTML = ''">Clear output</button>
+    <div id="debugDiv" style="padding-left: 5px; margin: 0 20px 0 20px; background-color: lightgray; overflow-y: scroll; height: 500px; clear: both;"></div>
 </body>
 
 <script>
@@ -42,65 +68,93 @@
     console.error = console.debug = console.info =  console.log;
 
     var planeEq = "x * x + y * y - z * z - 25";     // Can use x, y, z unknowns
-    var size = {x: 256, y: 256, z: 256};
+    var sizeVol;
+    var sizeVox;
     var iterations;
-    var nThreadsMin;
-    var nThreadsMax;
+    var nThreads;
+    var isoValue;
+    var valueType;
 
     function startTest() {
-        var sizeX = document.getElementById('sizeX').value;
-        var sizeY = document.getElementById('sizeX').value;
-        var sizeZ = document.getElementById('sizeX').value;
-
-        nThreadsMin = document.getElementById('numWorkersMin').value;
-        nThreadsMax = document.getElementById('numWorkersMax').value;
-
-        iterations = document.getElementById('numIterations').value;
-
-        // Input verification
-        if (sizeX === "" || sizeY === "" || sizeZ === "" || nThreadsMin === "" || nThreadsMax === "" || iterations === "") {
-            return;
-        }
-
-        size.x = parseInt(sizeX);
-        size.y = parseInt(sizeY);
-        size.z = parseInt(sizeZ);
-
-        nThreadsMin = parseInt(nThreadsMin);
-        nThreadsMax = parseInt(nThreadsMax);
-
-        iterations = parseInt(iterations);
-
-        // Input verification
-        if (size.x > 1024 || size.x < 64 || size.y > 1024 || size.y < 64 || size.z > 1024 || size.z < 64 || size.x > 1024 || nThreadsMin < 1 || nThreadsMin > 16 || nThreadsMax < 1 || nThreadsMax > 16 || iterations < 1 || iterations > 100) {
-            return;
-        }
-
-        console.log("Generating float scalar field of size (" + size.x + ", " + size.y + ", " + size.z + ") with equation: val = " + planeEq);
-
-        let worker = new Worker("./MarchingCubesDataGenerator.js");
-
-        worker.onmessage = function(result) {
-            var values = new Float32Array(result.data);
-            console.log("Finished scalar field generation. Starting performance test (Iterations per num. of workers: " + iterations + ").\n\n")
-
-            marchingCubesTest(values);
+        sizeVol = {
+            x: parseInt(document.getElementById('sizeX').value),
+            y: parseInt(document.getElementById('sizeY').value),
+            z: parseInt(document.getElementById('sizeZ').value),
         };
 
-        worker.postMessage({size: size, planeEq: planeEq});
+        nThreads = {
+            min: parseInt(document.getElementById('numWorkersMin').value),
+            max: parseInt(document.getElementById('numWorkersMax').value)
+        };
+
+        sizeVox = {
+            x: parseFloat(document.getElementById('voxDimX').value),
+            y: parseFloat(document.getElementById('voxDimY').value),
+            z: parseFloat(document.getElementById('voxDimZ').value)
+        };
+
+        iterations = parseInt(document.getElementById('numIterations').value);
+        isoValue = parseFloat(document.getElementById('isoValue').value);
+
+        // Value type
+        var e = document.getElementById("valueType");
+        valueType = e.options[e.selectedIndex].value;
+
+        // File
+        var volFile = document.getElementById("volFile").files[0];
+
+        // Input verification
+        if (!sizeVol.x || !sizeVol.y || !sizeVol.z || !nThreads.min || !nThreads.max || !iterations || !sizeVox.x || !sizeVox.y || !sizeVox.z || !isoValue) {
+            return;
+        }
+
+        if (volFile) {
+            var fileReader = new FileReader();
+
+            fileReader.onload = function () {
+                var values = eval("new " + valueType + "(this.result);");
+                if (values.length !== (sizeVol.x * sizeVol.y * sizeVol.z)) {
+                    console.log("Invalid volume dimensions or data type specified!");
+                    return;
+                }
+
+                marchingCubesTest(values);
+            };
+
+            console.log("Reading volume from the specified file");
+            fileReader.readAsArrayBuffer(volFile);
+        }
+        else {
+            // Volume file was not specified. Generate the volume
+            let worker = new Worker("./MarchingCubesDataGenerator.js");
+
+            worker.onmessage = function (result) {
+                var values = new Float32Array(result.data);
+                console.log("Finished scalar field generation. Starting performance test (Iterations per num. of workers: " + iterations + ").\n\n");
+
+                marchingCubesTest(values);
+            };
+
+            console.log("Generating float scalar field of size (" + sizeVol.x + ", " + sizeVol.y + ", " + sizeVol.z + ") with equation: val = " + planeEq);
+            worker.postMessage({size: sizeVol, planeEq: planeEq});
+        }
     }
 
     function marchingCubesTest(values) {
         var iterCounter = 0;
-        var threadCounter = nThreadsMin;
+        var threadCounter = nThreads.min;
         var times = [];
         var timeSum = 0;
 
         var onLoad = function(vertices, time) {
-            vertices = null;
-
             times.push(time);
             timeSum += time;
+
+            // Destroy data
+            for (var i = 0; i < vertices.length; i++) {
+                vertices[i] = null;
+            }
+            vertices = null;
 
             iterCounter ++;
 
@@ -130,9 +184,9 @@
 
         var MC = new MarchingCubes();
 
-        for (var i = nThreadsMin; i <= nThreadsMax; i++) {
+        for (var i = nThreads.min; i <= nThreads.max; i++) {
             for (var j = 0; j < iterations; j++) {
-                MC.extractMesh({dimensions: size, voxelDimensions: {x: 1.0, y: 1.0, z: 1.0}, isoLevel: 0.5}, values, i, onLoad);
+                MC.extractMesh({dimensions: sizeVol, voxelDimensions: sizeVox, isoLevel: isoValue}, values, i, onLoad);
             }
         }
     }
