@@ -182,7 +182,6 @@ vector<T> generateScalarVolume(const vec3<int> &size) {
 				T y = axisMin + axisRange * j / (size.y - 1);
 				T z = axisMin + axisRange * k / (size.z - 1);
 				scalarField.push_back(x*x + y*y - z*z - 25);
-
 			}
 		}
 	}
@@ -191,7 +190,7 @@ vector<T> generateScalarVolume(const vec3<int> &size) {
 }
  
 template<typename T>
-void extractInputHandler(ifstream &inputFileStream, ofstream &outFileStream, const vec3<int> &size, const vec3<float> &voxSize, const T &isoValue, const int &nThreads) {
+void extractHandler(ifstream &inputFileStream, ofstream &outFileStream, const vec3<int> &size, const vec3<float> &voxSize, const T &isoValue, const int &nThreads) {
 	T *scalarField;
 	vector<T> helperVec;
 
@@ -616,31 +615,31 @@ int main(int argc, char* argv[]) {
 		}
 
 		if (type.compare("char") == 0) {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (char)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (char)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 		else if (type.compare("uchar") == 0) {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (unsigned char)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (unsigned char)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 		else if (type.compare("short") == 0) {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (short)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (short)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 		else if (type.compare("ushort") == 0) {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (unsigned short)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (unsigned short)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 		else if (type.compare("int") == 0) {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (int)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (int)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 		else if (type.compare("uint") == 0) {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (unsigned int)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (unsigned int)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 		else if (type.compare("float") == 0) {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (float)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (float)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 		else if (type.compare("double") == 0) {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (double)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (double)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 		else {
-			extractInputHandler(inputFileStream, outFileStream, size, voxSize, (float)atoi(isoValueStr.c_str()), nThreadsMax);
+			extractHandler(inputFileStream, outFileStream, size, voxSize, (float)atoi(isoValueStr.c_str()), nThreadsMax);
 		}
 	}
 	

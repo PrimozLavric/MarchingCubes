@@ -23,15 +23,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1614">
-              <caret line="252" column="50" selection-start-line="252" selection-start-column="50" selection-end-line="252" selection-end-column="50" />
+            <state relative-caret-position="6732">
+              <caret line="244" column="13" selection-start-line="244" selection-start-column="13" selection-end-line="244" selection-end-column="13" />
+              <folding>
+                <element signature="method#isUint#0;class#Main#0" expanded="false" />
+                <element signature="method#isFloat#0;class#Main#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExtractHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ExtractHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="7" column="148" selection-start-line="7" selection-start-column="148" selection-end-line="7" selection-end-column="148" />
+              <folding>
+                <element signature="docComment;class#ExtractHandler#0" expanded="false" />
+                <element signature="method#extractHandlerChar#0;class#ExtractHandler#0" expanded="false" />
+                <element signature="method#extractHandlerShort#0;class#ExtractHandler#0" expanded="false" />
+                <element signature="method#extractHandlerInt#0;class#ExtractHandler#0" expanded="false" />
+                <element signature="method#extractHandlerFloat#0;class#ExtractHandler#0" expanded="false" />
+                <element signature="method#extractHandlerDouble#0;class#ExtractHandler#0" expanded="false" />
+                <element signature="method#outputToFile#0;class#ExtractHandler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BenchmarkHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BenchmarkHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#11720#12004#0" expanded="true" />
-                <element signature="e#12003#12004#0" expanded="true" />
+                <element signature="method#benchmarkChar#0;class#BenchmarkHandler#0" expanded="false" />
+                <element signature="method#benchmarkShort#0;class#BenchmarkHandler#0" expanded="false" />
+                <element signature="method#benchmarkInt#0;class#BenchmarkHandler#0" expanded="false" />
+                <element signature="method#benchmarkFloat#0;class#BenchmarkHandler#0" expanded="false" />
+                <element signature="method#benchmarkDouble#0;class#BenchmarkHandler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VolumeGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VolumeGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
+              <folding>
+                <element signature="method#generateScalarFieldChar#0;class#VolumeGenerator#0" expanded="false" />
+                <element signature="method#generateScalarFieldShort#0;class#VolumeGenerator#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -43,8 +90,8 @@
             <state relative-caret-position="330">
               <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
-                <element signature="e#213#214#0" expanded="false" />
-                <element signature="e#253#254#0" expanded="false" />
+                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#330#331#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,6 +127,10 @@
         <option value="$PROJECT_DIR$/src/TablesMC.java" />
         <option value="$PROJECT_DIR$/src/Vec3.java" />
         <option value="$PROJECT_DIR$/src/CallbackMC.java" />
+        <option value="$PROJECT_DIR$/src/VolumeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/MarchingCubes.java" />
+        <option value="$PROJECT_DIR$/src/ExtractHandler.java" />
+        <option value="$PROJECT_DIR$/src/BenchmarkHandler.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -111,42 +162,15 @@
             <id />
           </State>
           <State>
-            <id>Class structureJava</id>
+            <id>General</id>
           </State>
           <State>
-            <id>Code maturity issuesJava</id>
-          </State>
-          <State>
-            <id>Google Web Toolkit issues</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Javadoc issuesJava</id>
-          </State>
-          <State>
-            <id>Performance issuesJava</id>
-          </State>
-          <State>
-            <id>Spring</id>
-          </State>
-          <State>
-            <id>Spring AOPSpring</id>
-          </State>
-          <State>
-            <id>TestNGJava</id>
-          </State>
-          <State>
-            <id>Threading issuesJava</id>
+            <id>Plugin DevKit</id>
           </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Android</id>
+            <id>Duplicates</id>
           </State>
         </selected-state>
       </profile-state>
@@ -177,8 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,22 +236,29 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Sola\Diplomska\MarchingCubes\MarchingCubesJava" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <option name="VM_PARAMETERS" value="-Xmx6144M -d64" />
-      <option name="PROGRAM_PARAMETERS" value="7 8  10" />
+      <option name="PROGRAM_PARAMETERS" value="benchmark -input-vol ./lobster.raw -vol-dim 301 324 56 -data-type char -vox-dim 1 1 1.4 -iso 30 -o test.obj -nThread 1 8" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jre1.8.0_92" />
@@ -647,35 +676,36 @@
       <workItem from="1467959266573" duration="9545000" />
       <workItem from="1468002482051" duration="817000" />
       <workItem from="1468139178156" duration="2447000" />
+      <workItem from="1468224289165" duration="17502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17966000" />
+    <option name="totallyTimeSpent" value="35468000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="3866" height="2106" extended-state="7" />
-    <editor active="false" />
+    <frame x="-13" y="-13" width="3866" height="2106" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30562863" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30299842" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14166667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39926353" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40241978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -697,23 +727,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>7</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>255</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="32" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="outFile.getParentFile()" language="JAVA" custom="" />
+        <watch expression="&quot;f &quot; + idx + 1 + &quot; &quot; + idx + 2 + &quot; &quot; + idx + 3 + &quot;\n&quot;" language="JAVA" custom="" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -725,9 +746,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11720#12004#0" expanded="true" />
-            <element signature="e#12003#12004#0" expanded="true" />
+            <element signature="method#isUint#0;class#Main#0" expanded="false" />
+            <element signature="method#isFloat#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -737,8 +757,8 @@
         <state relative-caret-position="330">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
-            <element signature="e#213#214#0" expanded="false" />
-            <element signature="e#253#254#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -756,9 +776,38 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11720#12004#0" expanded="true" />
-            <element signature="e#12003#12004#0" expanded="true" />
+            <element signature="method#isUint#0;class#Main#0" expanded="false" />
+            <element signature="method#isFloat#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CallbackMC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TablesMC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#isUint#0;class#Main#0" expanded="false" />
+            <element signature="method#isFloat#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -768,8 +817,8 @@
         <state relative-caret-position="170">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
-            <element signature="e#213#214#0" expanded="false" />
-            <element signature="e#253#254#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -787,9 +836,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11720#12004#0" expanded="true" />
-            <element signature="e#12003#12004#0" expanded="true" />
+            <element signature="method#isUint#0;class#Main#0" expanded="false" />
+            <element signature="method#isFloat#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,8 +847,8 @@
         <state relative-caret-position="170">
           <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
           <folding>
-            <element signature="e#213#214#0" expanded="false" />
-            <element signature="e#253#254#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,20 +876,89 @@
         <state relative-caret-position="330">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
-            <element signature="e#213#214#0" expanded="false" />
-            <element signature="e#253#254#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4353995">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VolumeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
+          <folding>
+            <element signature="method#generateScalarFieldChar#0;class#VolumeGenerator#0" expanded="false" />
+            <element signature="method#generateScalarFieldShort#0;class#VolumeGenerator#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MarchingCubes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="314" column="36" selection-start-line="314" selection-start-column="36" selection-end-line="314" selection-end-column="36" />
+          <folding>
+            <element signature="docComment;class#MarchingCubes#0" expanded="false" />
+            <element signature="method#lerp#0;class#MarchingCubes#0" expanded="false" />
+            <element signature="method#marchingCubesChar#0;class#MarchingCubes#0" expanded="false" />
+            <element signature="e#1156#1192#0" expanded="false" />
+            <element signature="method#marchingCubesShort#0;class#MarchingCubes#0" expanded="false" />
+            <element signature="e#10061#10097#0" expanded="false" />
+            <element signature="e#18961#18997#0" expanded="false" />
+            <element signature="method#marchingCubesFloat#0;class#MarchingCubes#0" expanded="false" />
+            <element signature="e#27865#27901#0" expanded="false" />
+            <element signature="method#marchingCubesDouble#0;class#MarchingCubes#0" expanded="false" />
+            <element signature="e#36894#36930#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BenchmarkHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#benchmarkChar#0;class#BenchmarkHandler#0" expanded="false" />
+            <element signature="method#benchmarkShort#0;class#BenchmarkHandler#0" expanded="false" />
+            <element signature="method#benchmarkInt#0;class#BenchmarkHandler#0" expanded="false" />
+            <element signature="method#benchmarkFloat#0;class#BenchmarkHandler#0" expanded="false" />
+            <element signature="method#benchmarkDouble#0;class#BenchmarkHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1614">
-          <caret line="252" column="50" selection-start-line="252" selection-start-column="50" selection-end-line="252" selection-end-column="50" />
+        <state relative-caret-position="6732">
+          <caret line="244" column="13" selection-start-line="244" selection-start-column="13" selection-end-line="244" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11720#12004#0" expanded="true" />
-            <element signature="e#12003#12004#0" expanded="true" />
+            <element signature="method#isUint#0;class#Main#0" expanded="false" />
+            <element signature="method#isFloat#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExtractHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="148" selection-start-line="7" selection-start-column="148" selection-end-line="7" selection-end-column="148" />
+          <folding>
+            <element signature="docComment;class#ExtractHandler#0" expanded="false" />
+            <element signature="method#extractHandlerChar#0;class#ExtractHandler#0" expanded="false" />
+            <element signature="method#extractHandlerShort#0;class#ExtractHandler#0" expanded="false" />
+            <element signature="method#extractHandlerInt#0;class#ExtractHandler#0" expanded="false" />
+            <element signature="method#extractHandlerFloat#0;class#ExtractHandler#0" expanded="false" />
+            <element signature="method#extractHandlerDouble#0;class#ExtractHandler#0" expanded="false" />
+            <element signature="method#outputToFile#0;class#ExtractHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>

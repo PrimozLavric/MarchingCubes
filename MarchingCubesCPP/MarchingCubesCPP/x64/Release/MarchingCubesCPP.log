@@ -1,0 +1,156 @@
+﻿  Main.cpp
+Main.cpp(378): warning C4129: '.': unrecognized character escape sequence
+Main.cpp(341): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Main.cpp(584): note: see reference to function template instantiation 'void benchmarkHandler<char>(std::ifstream &,std::ofstream &,const vec3<int> &,const vec3<float> &,const T &,const int &,const int &,const int &)' being compiled
+          with
+          [
+              T=char
+          ]
+Main.cpp(181): warning C4244: 'initializing': conversion from 'float' to 'char', possible loss of data
+  Main.cpp(292): note: see reference to function template instantiation 'std::vector<T,std::allocator<char>> generateScalarVolume<T>(const vec3<int> &)' being compiled
+          with
+          [
+              T=char
+          ]
+  Main.cpp(584): note: see reference to function template instantiation 'void benchmarkHandler<char>(std::ifstream &,std::ofstream &,const vec3<int> &,const vec3<float> &,const T &,const int &,const int &,const int &)' being compiled
+          with
+          [
+              T=char
+          ]
+Main.cpp(182): warning C4244: 'initializing': conversion from 'float' to 'char', possible loss of data
+Main.cpp(183): warning C4244: 'initializing': conversion from 'float' to 'char', possible loss of data
+Main.cpp(96): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Main.cpp(329): note: see reference to function template instantiation 'void marchingCubes<T>(std::vector<vec3<float>,std::allocator<_Ty>> *,const T *,const vec3<int> &,const int,const vec3<float> &,const T,const int)' being compiled
+          with
+          [
+              T=char,
+              _Ty=vec3<float>
+          ]
+Main.cpp(100): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(104): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(108): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(113): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(117): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(121): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(125): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(130): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(134): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(138): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(142): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Main.cpp(181): warning C4244: 'initializing': conversion from 'float' to 'unsigned char', possible loss of data
+  Main.cpp(292): note: see reference to function template instantiation 'std::vector<T,std::allocator<_Ty>> generateScalarVolume<T>(const vec3<int> &)' being compiled
+          with
+          [
+              T=unsigned char,
+              _Ty=unsigned char
+          ]
+  Main.cpp(587): note: see reference to function template instantiation 'void benchmarkHandler<unsigned char>(std::ifstream &,std::ofstream &,const vec3<int> &,const vec3<float> &,const T &,const int &,const int &,const int &)' being compiled
+          with
+          [
+              T=unsigned char
+          ]
+Main.cpp(182): warning C4244: 'initializing': conversion from 'float' to 'unsigned char', possible loss of data
+Main.cpp(183): warning C4244: 'initializing': conversion from 'float' to 'unsigned char', possible loss of data
+Main.cpp(181): warning C4244: 'initializing': conversion from 'float' to 'short', possible loss of data
+  Main.cpp(292): note: see reference to function template instantiation 'std::vector<T,std::allocator<_Ty>> generateScalarVolume<T>(const vec3<int> &)' being compiled
+          with
+          [
+              T=short,
+              _Ty=short
+          ]
+  Main.cpp(590): note: see reference to function template instantiation 'void benchmarkHandler<short>(std::ifstream &,std::ofstream &,const vec3<int> &,const vec3<float> &,const T &,const int &,const int &,const int &)' being compiled
+          with
+          [
+              T=short
+          ]
+Main.cpp(182): warning C4244: 'initializing': conversion from 'float' to 'short', possible loss of data
+Main.cpp(183): warning C4244: 'initializing': conversion from 'float' to 'short', possible loss of data
+Main.cpp(181): warning C4244: 'initializing': conversion from 'float' to 'unsigned short', possible loss of data
+  Main.cpp(292): note: see reference to function template instantiation 'std::vector<T,std::allocator<_Ty>> generateScalarVolume<T>(const vec3<int> &)' being compiled
+          with
+          [
+              T=unsigned short,
+              _Ty=unsigned short
+          ]
+  Main.cpp(593): note: see reference to function template instantiation 'void benchmarkHandler<unsigned short>(std::ifstream &,std::ofstream &,const vec3<int> &,const vec3<float> &,const T &,const int &,const int &,const int &)' being compiled
+          with
+          [
+              T=unsigned short
+          ]
+Main.cpp(182): warning C4244: 'initializing': conversion from 'float' to 'unsigned short', possible loss of data
+Main.cpp(183): warning C4244: 'initializing': conversion from 'float' to 'unsigned short', possible loss of data
+Main.cpp(181): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Main.cpp(292): note: see reference to function template instantiation 'std::vector<int,std::allocator<_Ty>> generateScalarVolume<T>(const vec3<T> &)' being compiled
+          with
+          [
+              _Ty=int,
+              T=int
+          ]
+  Main.cpp(596): note: see reference to function template instantiation 'void benchmarkHandler<int>(std::ifstream &,std::ofstream &,const vec3<int> &,const vec3<float> &,const T &,const int &,const int &,const int &)' being compiled
+          with
+          [
+              T=int
+          ]
+Main.cpp(182): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+Main.cpp(183): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+Main.cpp(181): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+  Main.cpp(292): note: see reference to function template instantiation 'std::vector<T,std::allocator<_Other>> generateScalarVolume<T>(const vec3<int> &)' being compiled
+          with
+          [
+              T=unsigned int,
+              _Other=std::_Vbase
+          ]
+  Main.cpp(599): note: see reference to function template instantiation 'void benchmarkHandler<unsigned int>(std::ifstream &,std::ofstream &,const vec3<int> &,const vec3<float> &,const T &,const int &,const int &,const int &)' being compiled
+          with
+          [
+              T=unsigned int
+          ]
+Main.cpp(182): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+Main.cpp(183): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+Main.cpp(96): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+  Main.cpp(329): note: see reference to function template instantiation 'void marchingCubes<T>(std::vector<vec3<float>,std::allocator<_Ty>> *,const T *,const vec3<int> &,const int,const vec3<float> &,const T,const int)' being compiled
+          with
+          [
+              T=unsigned int,
+              _Ty=vec3<float>
+          ]
+Main.cpp(100): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(104): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(108): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(113): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(117): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(121): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(125): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(130): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(134): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(138): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(142): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+Main.cpp(96): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Main.cpp(329): note: see reference to function template instantiation 'void marchingCubes<T>(std::vector<vec3<float>,std::allocator<_Ty>> *,const T *,const vec3<int> &,const int,const vec3<float> &,const T,const int)' being compiled
+          with
+          [
+              T=double,
+              _Ty=vec3<float>
+          ]
+  Main.cpp(605): note: see reference to function template instantiation 'void benchmarkHandler<double>(std::ifstream &,std::ofstream &,const vec3<int> &,const vec3<float> &,const T &,const int &,const int &,const int &)' being compiled
+          with
+          [
+              T=double
+          ]
+Main.cpp(100): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(113): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(117): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(121): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(125): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(130): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(134): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(138): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Main.cpp(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating code
+  19 of 2245 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    18 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  MarchingCubesCPP.vcxproj -> D:\Sola\Diplomska\MarchingCubes\MarchingCubesCPP\x64\Release\MarchingCubesCPP.exe
